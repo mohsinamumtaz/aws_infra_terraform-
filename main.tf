@@ -41,3 +41,13 @@ resource "aws_instance" "web_server" {
     Name = "Terraform-Web"
   }
 }
+
+resource "aws_instance" "web_server1" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+  subnet_id     = aws_subnet.public_subnet.id
+
+  tags = {
+    Name = "Terraform-Web1"
+  }
+}
